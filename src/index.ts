@@ -3,6 +3,7 @@ import ServerBootstrap, { Bootstrap } from "./bootstrap/server.bootstrap";
 
 const serverBootstrap: Bootstrap = new ServerBootstrap(Application);
 
+// Initializing the server
 (async () => {
    try {
       const resultServer = await serverBootstrap.initialize();
