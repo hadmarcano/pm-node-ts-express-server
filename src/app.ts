@@ -1,27 +1,30 @@
-import express, { Application } from "express";
-import routerHealth from "./helpers/health";
-import handlerErrors from "./helpers/errors";
+import express, { Application } from 'express'
+import routerHealth from './helpers/health'
+import routerUser from './modules/user/interfaces/http/rest/router'
+import HandlerErrors from './helpers/errors'
+
 class App {
-   readonly expressApp: Application;
+   readonly expressApp: Application
 
    constructor() {
-      this.expressApp = express();
-      this.mountHealthCheck();
-      // this.mountRoutes();
-      this.mountErrors();
+      this.expressApp = express()
+      this.mountHealthCheck()
+      this.mountRoutes()
+      this.mountErrors()
    }
 
    mountHealthCheck() {
-      this.expressApp.use("/", routerHealth);
+      this.expressApp.use('/', routerHealth)
    }
 
    mountRoutes(): void {
-      // this.expressApp.use("/user");
+      this.expressApp.use('/user', routerUser)
+      // this.expressApp.use('/driver', routerDriver)
    }
 
    mountErrors(): void {
-      this.expressApp.use(handlerErrors.notFound);
+      this.expressApp.use(HandlerErrors.notFound)
    }
 }
 
-export default new App().expressApp;
+export default new App().expressApp

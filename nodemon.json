@@ -1,12 +1,12 @@
 {
    "watch": ["src/"],
    "ext": "ts json",
-   "ignore": ["node_module"],
+   "ignore": ["node_modules"],
    "execMap": {
       "ts": "ts-node"
    },
    "events": {
-      "restart": "npm run lint"
+      "restart": "yarn run lint"
    },
    "env": {
       "NODE_ENV": "development"

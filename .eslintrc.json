@@ -8,7 +8,7 @@
       "plugin:@typescript-eslint/recommended"
    ],
    "rules": {
-      "quotes": ["error", "double"],
+      "quotes": ["error", "single"],
       "@typescript-eslint/no-explicit-any": ["warn"],
       "curly": "error",
       "no-empty": "error"
